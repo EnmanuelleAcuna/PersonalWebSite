@@ -8,6 +8,8 @@ trigger:
 
 pool:
   vmImage: 'vs2017-win2016' #'ubuntu-latest'
+  demands:
+  - npm
 
 steps:
 - task: NodeTool@0
@@ -15,14 +17,18 @@ steps:
     versionSpec: '12.x'
   displayName: 'Install Node.JS'
 
-- script: npm install
-  displayName: 'npm install'
+- task: Npm@1
+  displayName: 'Run npm install'
+  inputs:
+    verbose: false
+#- script: npm install
+#  displayName: 'npm install'
 
-- script: npm install -g parcel-bundler --save-dev
+- script: npm install parcel-bundler --save-dev
   displayName: 'Install parceljs'
 
 - script: npm run build
-  displayName: 'npm build'
+  displayName: 'Run npm build'
 
 - script: npm pack
   displayName: 'Package for npm release'
@@ -40,5 +46,5 @@ steps:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'eacuna'
-    #publishLocation: 'Container'
+    publishLocation: 'Container'
   displayName: 'Publish output files'
