@@ -18,7 +18,7 @@ steps:
 - script: npm install
   displayName: 'npm install'
 
-- script: npm install parcel-bundler --save-dev
+- script: npm install -g parcel-bundler --save-dev
   displayName: 'Install parceljs'
 
 - script: npm run build
