@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/EnmanuelleAcuna/PersonalWebSite#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
     "materialize-css": "^1.0.0-rc.2"
   },
   "devDependencies": {},
