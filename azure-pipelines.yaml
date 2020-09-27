@@ -29,7 +29,7 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: 'src/static-site-azure-app-service/build'
+    SourceFolder: '$(System.DefaultWorkingDirectory)'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     CleanTargetFolder: true
@@ -39,6 +39,6 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+    ArtifactName: 'eacuna'
+    #publishLocation: 'Container'
   displayName: 'Publish output files'
