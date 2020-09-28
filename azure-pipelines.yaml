@@ -29,7 +29,7 @@ steps:
 #  displayName: 'Install parceljs'
 #- script: npm install parcel-bundler --save-dev
 
-- task: npm run build
+- script: npm run build
   displayName: 'Run npm build'
   workingDirectory: '$(wwwRootDir)'
 
