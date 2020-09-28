@@ -24,7 +24,6 @@ steps:
   displayName: 'Run npm install'
   inputs:
     verbose: false
-  command: 'install'
 
 # Install parcel, not needed anymore since it is in package.json
 #  displayName: 'Install parceljs'
