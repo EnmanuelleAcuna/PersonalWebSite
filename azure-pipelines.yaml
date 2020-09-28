@@ -13,6 +13,7 @@ pool:
 
 variables:
   wwwRootDir: 'src/eacuna'
+  sourceFolder: 'dist'
 
 steps:
 - task: NodeTool@0
@@ -39,7 +40,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy output files'
   inputs:
-    SourceFolder: 'dist'
+    SourceFolder: '$(sourceFolder)'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     CleanTargetFolder: true
