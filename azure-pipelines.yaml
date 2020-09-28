@@ -11,40 +11,44 @@ pool:
   demands:
   - npm
 
+variables:
+  wwwRootDir: 'src/eacuna'
+
 steps:
 - task: NodeTool@0
+  displayName: 'Install Node.JS'
   inputs:
     versionSpec: '12.x'
-  displayName: 'Install Node.JS'
 
 - task: Npm@1
   displayName: 'Run npm install'
   inputs:
     verbose: false
-#- script: npm install
-#  displayName: 'npm install'
+  command: 'install'
 
-- script: npm install parcel-bundler --save-dev
-  displayName: 'Install parceljs'
+# Install parcel, not needed anymore since it is in package.json
+#  displayName: 'Install parceljs'
+#- script: npm install parcel-bundler --save-dev
 
-- script: npm run build
+- task: npm run build
   displayName: 'Run npm build'
+  workingDirectory: '$(wwwRootDir)'
 
 - script: npm pack
   displayName: 'Package for npm release'
 
 - task: CopyFiles@2
+  displayName: 'Copy output files'
   inputs:
-    SourceFolder: '$(System.DefaultWorkingDirectory)'
+    SourceFolder: 'dist'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     CleanTargetFolder: true
     OverWrite: true
-  displayName: 'Copy output files'
 
 - task: PublishBuildArtifacts@1
+  displayName: 'Publish output files'
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'eacuna'
     publishLocation: 'Container'
-  displayName: 'Publish output files'
