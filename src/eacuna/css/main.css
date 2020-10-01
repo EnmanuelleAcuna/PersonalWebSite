@@ -1,21 +1,27 @@
-/******************
+/********************
 GENERAL
-******************/
-
+*/
 body {
     font-family: "Open Sans", sans-serif;
     background-color: #eeeeee;
     color: #999;
 }
 
-/* Custom */
+/********************
+CUSTOM
+*/
+.enmanuelle {
+    font-family: 'Tangerine', cursive;
+    font-size: 6rem;
+}
+
 .turqueza {
     background-color: #a0d5db;
 }
 
-.enmanuelle {
-    font-family: 'Tangerine', cursive;
-    font-size: 6rem;
+.bg-clouds {
+    background-image: url("../img/clouds.jpg");
+    background-size: cover;
 }
 
 .fz-1-2-r {
@@ -24,11 +30,6 @@ body {
 
 .fz-1-4-r {
     font-size: 1.4rem;
-}
-
-.bg-clouds {
-    background-image: url("../img/clouds.jpg");
-    background-size: cover;
 }
 
 .text-justified {
@@ -55,14 +56,14 @@ body {
     margin-top: 8rem;
 }
 
+.mb-4 {
+    margin-bottom: 4rem;
+}
+
 .pt-3 {
     padding-top: 3rem;
 }
 
 .pt-6 {
     padding-top: 6rem;
-}
-
-.mb-4 {
-    margin-bottom: 4rem;
 }
