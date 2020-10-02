@@ -60,6 +60,10 @@ CUSTOM
     margin-bottom: 4rem;
 }
 
+.pt-1 {
+    padding-top: 1rem;
+}
+
 .pt-3 {
     padding-top: 3rem;
 }
