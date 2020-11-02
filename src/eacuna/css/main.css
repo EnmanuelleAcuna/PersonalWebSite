@@ -15,12 +15,8 @@ CUSTOM
     font-size: 6rem;
 }
 
-.turqueza {
-    background-color: #a0d5db;
-}
-
-.bg-clouds {
-    background-image: url("../img/clouds.jpg");
+.bg-squares {
+    background-image: url("../img/cuadros_3.jpg");
     background-size: cover;
 }
 
@@ -50,6 +46,10 @@ CUSTOM
 
 .mt-4 {
     margin-top: 4rem;
+}
+
+.mt-6 {
+    margin-top: 6rem;
 }
 
 .mt-8 {
