@@ -28,7 +28,7 @@ steps:
 
 # Install ParcelJS for CI
 - script: npm install parcel-bundler --save-dev
-  displayName: 'Install parceljs'
+  displayName: 'Install ParcelJS'
 
 - script: npm run build
   displayName: 'Run npm build'
