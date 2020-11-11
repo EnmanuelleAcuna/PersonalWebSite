@@ -44,6 +44,10 @@ CUSTOM
     margin: 0 auto;
 }
 
+.mt-0 {
+    margin-top: 0;
+}
+
 .mt-4 {
     margin-top: 4rem;
 }
@@ -70,4 +74,8 @@ CUSTOM
 
 .pt-6 {
     padding-top: 6rem;
+}
+
+.square {
+    border-radius: 0;
 }
